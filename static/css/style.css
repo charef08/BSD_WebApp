@@ -96,13 +96,13 @@
     height: 30%;
     background-color: white;
     padding-left: 5%;
-    padding-top: 4%;
+    padding-top: 2%;
     /* padding-bottom: 1%; */
 }
 
 .cadre{
     width: 60%;
-    height: 92%;
+    height: 80%;
     background-color: #F1ECE9;
     padding-left: 2%;
     padding-top: 1%;
@@ -117,7 +117,7 @@
 }
 
 .cadre p{
-    padding-top: 4%;
+    padding-top: 3%;
     padding-left: 10%;
     font-size: 19px;
     font-family: Segoe Script;
@@ -126,24 +126,58 @@
 
 .msg1{
     height: 30%;
-    background-color: green;
+    background-color: white;
+    /* padding-top: 2%; */
+    padding-left: 3%;
 }
 
 .input{
-    padding:15px 10px;
-    line-height:140%;
-    font-size: 30px;
+    display:inline-block;
+    height: 90%;
+    width: 80%;
+    resize: none;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 3px solid black;
 }
 
 .exg{
     height: 10%;
-    background-color: orange;
+    background-color: white
+}
+
+.exg_img{
+    position: relative;
+    top: 0%;
+    left: 38%;
+    height: 90%;
+    width: 6%;
+    background-color: white;
+}
+
+.exg_img img{
+    height: 100%;
+    width: 100%;
 }
 
 .msg2{
     height: 30%;
-    background-color: black;
+    background-color: white;
+    /* padding-top: 2%; */
+    padding-left: 3%;
 }
+
+.txt_cadre{
+    border: 3px solid black;
+    height: 90%;
+    width: 80%;
+    resize: none;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 
 
 /* ----------------------------------------- PART1 3  ------------------------------------------------------- */
