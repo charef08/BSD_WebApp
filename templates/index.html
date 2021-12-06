@@ -15,10 +15,49 @@
     <!-- Bootstrap theme -->
     <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
 
-  
-
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
   </head>
 
-  <body>
+  <body style="background-color:lightyellow">
+    <div class="container">
+      <div class="col-md-1 part1">
+        <div class="menu">
+          <p>Menu</p>
+          <a href="#1">
+            <div class="row img1">
+              <img src="{{ url_for('static', filename='assets/encryption.png') }}">
+            </div>
+          </a>
+          <a href="#2">
+            <div class="row img2">
+              <img src="{{ url_for('static', filename='assets/hacking.png') }}">
+            </div>
+          </a>
+          <a href="#3">
+            <div class="row img3">
+              <img src="{{ url_for('static', filename='assets/conversation.png') }}">
+            </div>
+          </a>
+          <a href="#4">
+            <div class="row img4">
+              <img src="{{ url_for('static', filename='assets/video.png') }}">
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-8 part2">
+        <div class="row intro">
+          <div class="cadre">
+            <h1> 	&lth1&gt Hello world &lth1&gt</h1>
+            <p> &ltp&gt Encrypt and Decrypt a message &ltp&gt</p>
+          </div>
+        </div>
+        <div class="row msg1"></div>
+        <div class="row exg"></div>
+        <div class="row msg2"></div>
+      </div>
+      <div class="col-md-3 part3">
+      </div>
+    </div>
   </body>
 </html>
