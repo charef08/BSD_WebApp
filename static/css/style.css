@@ -4,66 +4,11 @@
     padding: 0;
 }
 
+/* ----------------------------------------- PART1 1  ------------------------------------------------------- */
 .part1{
     background-color: white;
     height: 100vh;
     padding-top: 1%;
-}
-
-.part2{
-    background-color: red;
-    height: 100vh;
-}
-
-.part3{
-    background-color: yellow;
-    height: 100vh;
-}
-
-.intro{
-    height: 30%;
-    background-color: white;
-    padding-left: 5%;
-    padding-top: 4%;
-    /* padding-bottom: 1%; */
-}
-
-.msg1{
-    height: 30%;
-    background-color: green;
-}
-
-.exg{
-    height: 10%;
-    background-color: orange;
-}
-
-.msg2{
-    height: 30%;
-    background-color: black;
-}
-
-.cadre{
-    width: 60%;
-    height: 92%;
-    background-color: #F1ECE9;
-    padding-left: 2%;
-    padding-top: 1%;
-    border-radius: 33px;
-}
-
-.cadre h1{
-    padding-left: 2%;
-    font-weight: 700;
-    font-size: 40px;
-    font-family: Segoe Script;
-}
-
-.cadre p{
-    padding-top: 4%;
-    padding-left: 10%;
-    font-size: 19px;
-    font-family: Segoe Script;
 }
 
 .menu{
@@ -93,7 +38,6 @@
     background-color: white;
     border-radius: 27px;
 }
-
 
 .img1 img{
     height: 80%;
@@ -140,3 +84,75 @@
     height: 90%;
     width: 90%;
 }
+
+
+/* ----------------------------------------- PART1 2  ------------------------------------------------------- */
+.part2{
+    background-color: red;
+    height: 100vh;
+}
+
+.intro{
+    height: 30%;
+    background-color: white;
+    padding-left: 5%;
+    padding-top: 4%;
+    /* padding-bottom: 1%; */
+}
+
+.cadre{
+    width: 60%;
+    height: 92%;
+    background-color: #F1ECE9;
+    padding-left: 2%;
+    padding-top: 1%;
+    border-radius: 33px;
+}
+
+.cadre h1{
+    padding-left: 2%;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: Segoe Script;
+}
+
+.cadre p{
+    padding-top: 4%;
+    padding-left: 10%;
+    font-size: 19px;
+    font-family: Segoe Script;
+}
+
+
+.msg1{
+    height: 30%;
+    background-color: green;
+}
+
+.input{
+    padding:15px 10px;
+    line-height:140%;
+    font-size: 30px;
+}
+
+.exg{
+    height: 10%;
+    background-color: orange;
+}
+
+.msg2{
+    height: 30%;
+    background-color: black;
+}
+
+
+/* ----------------------------------------- PART1 3  ------------------------------------------------------- */
+.part3{
+    background-color: yellow;
+    height: 100vh;
+}
+
+
+
+
+
