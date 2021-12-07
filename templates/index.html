@@ -63,6 +63,7 @@
         <div class="row msg2">
           <div class="txt_cadre">
             <p>
+              {{resultat}}
               <!-- ADD A VARIABLE HERE -->
             </p>
           </div>
@@ -80,31 +81,33 @@
         </div>
         <div class="row choix">
           <div class="cadre_ch">
-            <div class="row algo">
-              <label for="algo-select">Choose an Algorithm:</label>
-              <select name="algo" id="algo-select">
-                  <option value="">--Please choose an option--</option>
-                  <option value="Cesar">Cesar</option>
-                  <option value="Vigenere">Vigenere</option>
-                  <option value="Transition">Transition</option>
-                  <option value="Substitution">Substitution</option>
-              </select>
-            </div>
-            <div class="row key">
-              <label for="key-select">Enter your Key:</label> <br>
-              <textarea class="input_k" type="text" id="key" name="key" placeholder="Enter your KEY here......"></textarea>
-            </div>
-            <div class="row method">
-              <label for="method-select">Choose a Method:</label>
-              <select name="methode" id="methode-select">
-                  <option value="">--Please choose an option--</option>
-                  <option value="Encrypt">Encrypt</option>
-                  <option value="Decrypt">Decrypt</option>
-              </select>
-            </div>
-            <div class="row submit">
-              <button type="button">Submit</button>
-            </div>
+            <form class="form" method="post" action="/process">
+              <div class="row algo">
+                <label for="algo-select">Choose an Algorithm:</label>
+                <select name="algo" id="algo-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Cesar">Cesar</option>
+                    <option value="Vigenere">Vigenere</option>
+                    <option value="Transition">Transition</option>
+                    <option value="Substitution">Substitution</option>
+                </select>
+              </div>
+              <div class="row key">
+                <label for="key-select">Enter your Key:</label> <br>
+                <textarea class="input_k" type="text" id="key" name="key" placeholder="Enter your KEY here......"></textarea>
+              </div>
+              <div class="row method">
+                <label for="method-select">Choose a Method:</label>
+                <select name="methode" id="methode-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Encrypt">Encrypt</option>
+                    <option value="Decrypt">Decrypt</option>
+                </select>
+              </div>
+              <div class="row submit">
+                <button type="button">Submit</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

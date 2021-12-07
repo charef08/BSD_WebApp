@@ -128,13 +128,13 @@
     height: 30%;
     background-color: white;
     /* padding-top: 2%; */
-    padding-left: 3%;
+    padding-left: 5%;
 }
 
 .input{
     display:inline-block;
     height: 90%;
-    width: 95%;
+    width: 92%;
     resize: none;
     padding-top: 10px;
     padding-left: 20px;
@@ -167,13 +167,13 @@
     height: 30%;
     background-color: white;
     padding-top: 2%;
-    padding-left: 3%;
+    padding-left: 5%;
 }
 
 .txt_cadre{
     border: 1px solid black;
     height: 95%;
-    width: 95%;
+    width: 92%;
     resize: none;
     padding-top: 10px;
     padding-left: 20px;
@@ -232,6 +232,10 @@
     border-top-left-radius: 50px;
 }
 
+.form{
+    height: 100%;
+    width: 100%;
+}
 .algo{
     height: 30%;
     width: 100%;
