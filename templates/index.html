@@ -8,17 +8,106 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Guest Book</title>
+    <title>Encryption App</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet"> 
     <!-- Bootstrap theme -->
     <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
 
-  
-
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
   </head>
 
-  <body>
+  <body style="background-color:lightyellow">
+    <div class="container">
+      <div class="col-md-1 part1">
+        <div class="menu">
+          <p>Menu</p>
+          <a href="#1">
+            <div class="row img1">
+              <img src="{{ url_for('static', filename='assets/encryption.png') }}">
+            </div>
+          </a>
+          <a href="#2">
+            <div class="row img2">
+              <img src="{{ url_for('static', filename='assets/hacking.png') }}">
+            </div>
+          </a>
+          <a href="#3">
+            <div class="row img3">
+              <img src="{{ url_for('static', filename='assets/conversation.png') }}">
+            </div>
+          </a>
+          <a href="#4">
+            <div class="row img4">
+              <img src="{{ url_for('static', filename='assets/video.png') }}">
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-8 part2">
+        <div class="row intro">
+          <div class="cadre">
+            <h1> 	&lth1&gt Hello world &lth1&gt</h1>
+            <p> &ltp&gt Encrypt and Decrypt a message &ltp&gt</p>
+          </div>
+        </div>
+        <div class="row msg1">
+          <textarea  rows="6" class="input" type="text" id="msg1" name="msg1" placeholder="Enter your message here......"></textarea>
+        </div>
+        <div class="row exg">
+          <div class="exg_img">
+            <img src="{{ url_for('static', filename='assets/exchange.png') }}">
+          </div>
+        </div>
+        <div class="row msg2">
+          <div class="txt_cadre">
+            <p>
+              <!-- ADD A VARIABLE HERE -->
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 part3">
+        <div class="row nm_lg">
+          <!-- <div class="col web_name">
+          </div> -->
+          <div class="logo">
+            <a href="#1">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}">
+            </a>
+          </div>
+        </div>
+        <div class="row choix">
+          <div class="cadre_ch">
+            <div class="row algo">
+              <label for="algo-select">Choose an Algorithm:</label>
+              <select name="algo" id="algo-select">
+                  <option value="">--Please choose an option--</option>
+                  <option value="Cesar">Cesar</option>
+                  <option value="Vigenere">Vigenere</option>
+                  <option value="Transition">Transition</option>
+                  <option value="Substitution">Substitution</option>
+              </select>
+            </div>
+            <div class="row key">
+              <label for="key-select">Enter your Key:</label> <br>
+              <textarea class="input_k" type="text" id="key" name="key" placeholder="Enter your KEY here......"></textarea>
+            </div>
+            <div class="row method">
+              <label for="method-select">Choose a Method:</label>
+              <select name="methode" id="methode-select">
+                  <option value="">--Please choose an option--</option>
+                  <option value="Encrypt">Encrypt</option>
+                  <option value="Decrypt">Decrypt</option>
+              </select>
+            </div>
+            <div class="row submit">
+              <button type="button">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
