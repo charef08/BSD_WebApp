@@ -17,8 +17,9 @@
 
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 
-    <script src="{{url_for('static', filename='js/functions.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/functions.js')}}"></script> -->
 
+    
   </head>
 
   <body style="background-color:lightyellow">
@@ -108,12 +109,54 @@
                 </select>
               </div>
               <div class="row submit">
-                <button type="button">Submit</button>
+                <!-- <button type="button" id="clickMe" onclick="click();">Submit</button> -->
+                <button type="button" id="clickMe">Submit</button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      console.log('start');
+      const algorithm = 'vigenere';
+      const text = 'test';
+      const key = 'psswd';
+      const metd = 'encrypt';
+
+      let data = {algorithm : algorithm,
+              text : text,
+              key : key,
+              metd : metd};
+      function getText(){
+      // (async () => {
+      //     const rawResponse = await fetch('http://127.0.0.1:5000/test', {
+      //       method: 'POST',
+      //       headers: {
+      //         'Accept': 'application/json',
+      //         'Content-Type': 'application/json'
+      //       },
+      //       body: JSON.stringify({
+      //         algorithm : algorithm,
+      //         text : text,
+      //         key : key,
+      //         metd : metd
+      //         })
+      //     });
+      //     const content = await rawResponse.json();
+      //     console.log(content);
+      //     })()
+        $.ajax({
+          url: '/process_form',
+          // url: 'http://127.0.0.1:5000/process_form',
+          type: 'POST',
+          data: data
+        });
+        console.log(1);
+        }
+      document.getElementById('clickMe').addEventListener('click', getText, true);
+    </script>
   </body>
 </html>
+
