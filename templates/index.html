@@ -22,17 +22,17 @@
     
   </head>
 
-  <body style="background-color:lightyellow">
+  <body>
     <div class="container">
       <div class="col-md-1 part1">
         <div class="menu">
           <p>Menu</p>
-          <a href="#1">
+          <a href="{{url_for('index')}}">
             <div class="row img1">
               <img src="{{ url_for('static', filename='assets/encryption.png') }}">
             </div>
           </a>
-          <a href="#2">
+          <a href="{{url_for('vig')}}">
             <div class="row img2">
               <img src="{{ url_for('static', filename='assets/hacking.png') }}">
             </div>
@@ -56,19 +56,21 @@
             <p> Encrypt and Decrypt a message </p>
           </div>
         </div>
+        <!-- <form class="form" method="post" action="/process_form"> -->
         <div class="row msg1">
           <textarea  rows="6" class="input" type="text" id="msg1" name="msg1" placeholder="Enter your message here......"></textarea>
         </div>
+      <!-- </form> -->
         <div class="row exg">
           <div class="exg_img">
             <img src="{{ url_for('static', filename='assets/exchange.png') }}">
           </div>
         </div>
         <div class="row msg2">
-          <div class="txt_cadre">
+          <div class="txt_cadre" id="msg2">
             <p>
               {{resultat}}
-              <!-- ADD A VARIABLE HERE -->
+              
             </p>
           </div>
         </div>
@@ -85,7 +87,7 @@
         </div>
         <div class="row choix">
           <div class="cadre_ch">
-            <form class="form" method="post" action="/process">
+            <form class="form" method="post" action="/process_form">
               <div class="row algo">
                 <label for="algo-select">Choose an Algorithm:</label>
                 <select name="algo" id="algo-select">
@@ -109,8 +111,8 @@
                 </select>
               </div>
               <div class="row submit">
-                <!-- <button type="button" id="clickMe" onclick="click();">Submit</button> -->
                 <button type="button" id="clickMe">Submit</button>
+                <!-- <input class="button" type="submit" value="Submit" id="clickMe" onclick="click();"> -->
               </div>
             </form>
           </div>
@@ -120,39 +122,33 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
       console.log('start');
-      const algorithm = 'vigenere';
-      const text = 'test';
-      const key = 'psswd';
-      const metd = 'encrypt';
 
-      let data = {algorithm : algorithm,
-              text : text,
-              key : key,
-              metd : metd};
-      function getText(){
-      // (async () => {
-      //     const rawResponse = await fetch('http://127.0.0.1:5000/test', {
-      //       method: 'POST',
-      //       headers: {
-      //         'Accept': 'application/json',
-      //         'Content-Type': 'application/json'
-      //       },
-      //       body: JSON.stringify({
-      //         algorithm : algorithm,
+      // let data = {algorithm : algorithm,
       //         text : text,
       //         key : key,
-      //         metd : metd
-      //         })
-      //     });
-      //     const content = await rawResponse.json();
-      //     console.log(content);
-      //     })()
+      //         metd : metd};
+      function getText(){
+        const algorithm = document.getElementById('algo-select').value;
+        const text = document.getElementById('msg1').value;
+        const key = document.getElementById('key').value;
+        const metd = document.getElementById('methode-select').value;
+        // var p = document.createElement('p');
+        // p.innerHTML = 'some text here';
+
+        // document.getElementById('msg2').appendChild(p);
         $.ajax({
-          url: '/process_form',
-          // url: 'http://127.0.0.1:5000/process_form',
+          url: '/msg_form',
           type: 'POST',
-          data: data
-        });
+          dataType:"json",
+          data: 
+            JSON.stringify({
+              "algorithm" : algorithm,
+              "text" : text,
+              "key" : key,
+              "metd" : metd
+            }),
+            contentType: "application/json",
+          });
         console.log(1);
         }
       document.getElementById('clickMe').addEventListener('click', getText, true);
