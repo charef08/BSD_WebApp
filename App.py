@@ -140,7 +140,7 @@ def process_msg():
 
         print('res : ', res)
             
-        return render_template('receive.html', name=name, message=msg_org, algo=algo, keys=cle, resultat=res)
+        return render_template('receive.html', name=name, message=msg_org, algo=algo, key=cle, resultat=res)
 
     except:
         return '<h2>Vous devez d\'abord recevoir un message pour pouvoir le decrypter</h2>'
