@@ -142,7 +142,7 @@
     font-size: 20px;
     font-family: Segoe Script;
 }
-.msg label, .infor label{
+.submit2 label, .msg label, .infor label{
     padding-left: 3%;
     font-weight: 800;
     font-size: 20px;
@@ -158,13 +158,13 @@
     resize: none;
 }
 .form{
-    height: 350px;
+    height: 310px;
     width: 100%;
     /* padding-left: 2%; */
 }
 
 .msg{
-    height: 200px;
+    height: 160px;
 }
 
 .msg textarea{
@@ -173,7 +173,7 @@
     margin-left: 3%;
     border-radius: 20px;
     display:inline-block;
-    height: 80%;
+    height: 95%;
     width: 94%;
     resize: none;
 }
@@ -230,6 +230,23 @@
     background-color: white;
     border-radius: 20px;
     font-size: 18px;
+}
+
+.submit2 button{
+    position: relative;
+    top: 10%;
+    left: 75%;
+    width: 40px;
+    height: 40px;
+    border-color: white;
+    background-color: white;
+    outline: 0;
+    border: 0px;
+}
+
+.submit2 img{
+    height: 80%;
+    width: 80%;
 }
 
 

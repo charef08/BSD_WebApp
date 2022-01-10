@@ -56,10 +56,16 @@
             </div>
           </div>
           <div class="row bottom">
+            <form id="refresh" class="form2" method="post" action="/call_list">
+              <div class="row submit2">
+                <label for="msg">Message :</label>
+                <button type="submit" form="refresh"><img src="{{ url_for('static', filename='assets/refresh.png') }}"></button>
+            </div>
+            </form>
             <form class="form" method="post" action="/process_msg">
             <!-- <form class="form"> -->
-                <div class="row msg">
-                    <label for="msg">Message :</label> <br>
+                <div class="row msg">  
+                    <!-- <br> -->
                     <textarea class="input_m" type="text" id="msg" name="message">{{message}}</textarea>
                 </div>
                 <div class="row infor">
@@ -96,11 +102,6 @@
                   </a>
                 </div>
             </div>
-            <form class="form" method="post" action="/call_list">
-                  <div class="row submit">
-                    <input id="clickMe" type="submit" value="Decrypt">
-                </div>
-            </form>
           </div>
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
