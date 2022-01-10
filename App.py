@@ -45,6 +45,7 @@ app = Flask(__name__)
 list_msg = []
 list_s = req('charef', True)
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index(msg='', cle='', res=''):
     return render_template('index2.html',message=msg, cle=cle, resultat=res)
