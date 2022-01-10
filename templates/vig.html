@@ -37,14 +37,14 @@
                       <img src="{{ url_for('static', filename='assets/hacking.png') }}">
                     </div>
                   </a>
-                  <a href="#3">
+                  <a href="{{url_for('send_page')}}">
                     <div class="row img3">
-                      <img src="{{ url_for('static', filename='assets/conversation.png') }}">
+                      <img src="{{ url_for('static', filename='assets/send.png') }}">
                     </div>
                   </a>
-                  <a href="#4">
+                  <a href="{{url_for('receive_page')}}">
                     <div class="row img4">
-                      <img src="{{ url_for('static', filename='assets/video.png') }}">
+                      <img src="{{ url_for('static', filename='assets/receive.png') }}">
                     </div>
                   </a>
                 </div>
@@ -52,7 +52,7 @@
             <div class="col-md-7 part2">
                 <div class="row intro">
                     <div class="cadre">
-                      <h1> 	Hello world </h1>
+                      <h1> 	Cryptograpy App </h1>
                       <p> Attaque Vigenere  </p>
                     </div>
                 </div>
@@ -92,9 +92,9 @@
                     </div>
                 </div>
                 <div class="row msg2">
-                  <label for="resultat">resultat:</label> <br>
+                  <label for="resultat">result :</label> <br>
                   <textarea disabled class="output_m">{{resultat}}</textarea>
-              </div>
+                </div>
             </div>
         </div>
     </body>

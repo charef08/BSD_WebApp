@@ -73,23 +73,26 @@ def decrypt_subt(mot, code):
 
 #-------------------------------------------- CRYPTAGE PAR TRANSPOSITION --------------------------------------------------------------
 
-# FONCTION DE DERYPTAGE PAR TRANSPOSITION
+# FONCTION DE DECRYPTAGE PAR TRANSPOSITION
 def decrypt_trsp(mot, cle):
     taille = len(mot)
     liste = []
-    nbr = taille/cle
-    i = 0
+    nbr = round(taille/cle)
+    i=0
     while i<taille:
-        part = ''
-        for j in range(0, cle):
-            part += mot[i]
+        mott = ''
+        for j in range(0, nbr):
+            mott += mot[i]
             i+=1
-        liste.append(part)
+        liste.append(mott)
     
     mot_decrypt = ''
-    for j in range(0, cle):
-        for elt in liste:
-            mot_decrypt += elt[j]
+    for i in range(0, nbr):
+        for j in range(0, len(liste)):
+            mot_decrypt += liste[j][i]
     
     return mot_decrypt.replace('.', '')
+
+
+
     

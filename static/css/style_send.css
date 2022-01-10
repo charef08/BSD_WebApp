@@ -1,6 +1,6 @@
 .container{
     height: 100vh;
-    width: 100%;
+    width: 99%;
     padding: 0;
     margin: 0;
 }
@@ -44,38 +44,38 @@
 
 .img1 img{
     height: 90%;
-    width: 90%;
+    width: 90%;;
 }
 
 .img2{
+    height: 6%;
+    width: 70%;
+    margin-left: 18%;
+    position: relative;
+    top: 30%;
+}
+
+.img2 img{
+    height: 90%;
+    width: 90%;
+}
+
+.img3{
     height: 10%;
     width: 100%;
     margin-left: 0px;
     position: relative;
-    top: 27%;
+    top: 45%;
     left: 27%;
     background-color: white;
     border-radius: 27px;
 }
 
-.img2 img{
+.img3 img{
     height:85%;
     width: 85%;
     padding-left: 15%;
     padding-top: 10%;
-}
-
-.img3{
-    height: 6%;
-    width: 70%;
-    margin-left: 18%;
-    position: relative;
-    top: 45%;
-}
-
-.img3 img{
-    height: 90%;
-    width: 90%;
 }
 
 .img4{
@@ -90,6 +90,7 @@
     height: 90%;
     width: 90%;
 }
+
 
 /* ----------------------------------------- PART 2  ------------------------------------------------------- */
 .part2{
@@ -106,7 +107,7 @@
 }
 
 .cadre{
-    width: 58%;
+    width: 51%;
     height: 80%;
     background-color: #F1ECE9;
     padding-left: 2%;
@@ -129,27 +130,75 @@
 }
 
 .form{
-    height: 300px;
+    /* padding-left: %; */
+    height: 400px;
     width: 100%;
     /* background-color: aqua; */
 }
 
+/* .form{
+    height: 300px;
+    width: 100%;
+    background-color: aqua;
+} */
+
 .msg{
-    height: 60%;
+    height: 40%;
     width: 100%;
     margin: 0;
     padding-left: 4%;
 }
 
-.key{
+.msg label{
+    padding-left: 2%;
+    font-weight: 800;
+    font-size: 20px;
+    font-family: Segoe Script;
+}
+
+
+.infor{
     height: 30%;
-    width: 100%;
+    width: 94%;
+    /* background-color: red; */
+    position: relative;
+    top: 10%;
+    left:4%;
+    padding-left: 3%;
+}
+
+.algo{
+    height: 50%;
+    width: 50%;
+    margin: 0;
+    padding-top: 2%;
+    padding-left: 4%;
+}
+
+.algo label{
+    padding-left: 2%;
+    font-weight: 800;
+    font-size: 20px;
+    font-family: Segoe Script;
+}
+.algo select{
+    height: 100%;
+    width: 80%;
+    padding-left: 5%;
+    margin-left: 6%;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+
+.key{
+    height: 40%;
+    width: 50%;  
     margin: 0;
     padding-left: 4%;
     margin-top: 2%;
 }
 
-.key label, .msg label{
+.key label{
     padding-left: 2%;
     font-weight: 800;
     font-size: 20px;
@@ -157,16 +206,16 @@
 }
 
 .input_k{
-    padding-top: 1%;
+    padding-top:4%;
     padding-left: 5%;
     margin-left: 6%;
     margin-top: 1%;
     border-radius: 20px;
     display:inline-block;
-    height: 50%;
-    width: 40%;
+    height: 100%;
+    width: 80%;
     resize: none;
-}
+} 
 
 .input_m{
     padding-top: 2%;
@@ -177,12 +226,15 @@
     margin-top: 1%;
     border-radius: 20px;
     display:inline-block;
-    height: 80%;
+    height: 100%;
     width: 90%;
     resize: none;
 }
 
 .submit{
+    position: relative;
+    top: 15%;
+    left: 0%;
     height: 15%;
     width: 100%;
     margin: 0;
@@ -200,42 +252,32 @@
     font-size: 18px;
 }
 
-/* .msg2{
-    height: 30%;
-    background-color: white;
-    padding-top: 3%;
+
+.method{
+    position: relative;
+    top: 12%;
+    height: 28%;
+    width: 112%;
+    margin: 0;
     padding-left: 4%;
 }
 
-.txt_cadre{
-    border: 1px solid black;
-    height: 90%;
-    width: 90%;
-    position: relative;
-    left: 6%;
-    resize: none;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    overflow-y: scroll;
-}
-
-
-.msg2 label{
+.method label{
     padding-left: 2%;
     font-weight: 800;
     font-size: 20px;
     font-family: Segoe Script;
 }
-
-.msg p{
-    overflow-y: scroll;
-} */
+.method select{
+    height: 40%;
+    width: 80%;
+    padding-left: 5%;
+    margin-left: 6%;
+    margin-top: 2%;
+    border-radius: 20px;
+}
 
 /* ----------------------------------------- PART 3  ------------------------------------------------------- */
-
 .part3{
     background-color: white;
     height: 100vh;
@@ -261,32 +303,4 @@
 .logo img{
     height: 100%;
     width: 100%;
-}
-
-.msg2{
-    height: 75%;
-    background-color: white;
-    padding-top: 3%;
-    /* padding-left: 4%; */
-}
-
-
-.msg2 label{
-    padding-left: 2%;
-    font-weight: 800;
-    font-size: 20px;
-    font-family: Segoe Script;
-}
-
-/* .output_m{ */
-.msg2 textarea{
-    padding-top: 2%;
-    padding-left: 5%;
-    margin-left: 6%;
-    margin-top: 1%;
-    border-radius: 20px;
-    display:inline-block;
-    height: 92%;
-    width: 90%;
-    resize: none;
 }

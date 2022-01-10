@@ -1,0 +1,133 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <meta name="description" content="">
+      <meta name="author" content="">
+  
+      <title>Encryption App</title>
+  
+      <!-- Bootstrap core CSS -->
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet"> 
+      <!-- Bootstrap theme -->
+      <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+  
+      <link href="{{ url_for('static', filename='css/style_send.css') }}" rel="stylesheet">
+  
+      <!-- <script src="{{url_for('static', filename='js/functions.js')}}"></script> -->
+  
+      
+    </head>
+  
+    <body>
+      <div class="container">
+          <div class="col-md-1 part1">
+              <div class="menu">
+                <p>Menu</p>
+                <a href="{{url_for('index')}}">
+                  <div class="row img1">
+                    <img src="{{ url_for('static', filename='assets/encryption.png') }}">
+                  </div>
+                </a>
+                <a href="{{url_for('vig')}}">
+                  <div class="row img2">
+                    <img src="{{ url_for('static', filename='assets/hacking.png') }}">
+                  </div>
+                </a>
+                <a href="{{url_for('send_page')}}">
+                  <div class="row img3">
+                    <img src="{{ url_for('static', filename='assets/send.png') }}">
+                  </div>
+                </a>
+                <a href="{{url_for('receive_page')}}">
+                  <div class="row img4">
+                    <img src="{{ url_for('static', filename='assets/receive.png') }}">
+                  </div>
+                </a>
+              </div>
+          </div>
+          <div class="col-md-7 part2">
+              <div class="row intro">
+                  <div class="cadre">
+                    <h1> 	Cryptograpy App </h1>
+                    <p> Send a message   </p>
+                  </div>
+              </div>
+              <div class="row bottom">
+                <form class="form" method="post" action="/send_message">
+                      <div class="row msg">
+                          <label for="msg-select">Enter your message:</label> <br>
+                          {% if message %}
+                          <textarea class="input_m" type="text" id="msg" name="msg" placeholder="Enter your message here......">{{message}}</textarea>
+                          {% else %}
+                          <textarea class="input_m" type="text" id="msg" name="msg" placeholder="Enter your message here......"></textarea>
+                          {% endif %}
+                      </div>
+                      <div class="row infor">
+                        <div class="col-md-4 algo">
+                          <label for="algo-select">Choose an Algorithm:</label>
+                          <select name="algo" id="algo-select">
+                            <option value="ceasar" selected>ceasar</option>
+                            <option value="vigenere">vigenere</option>
+                            <option value="substitution">substitution</option>
+                            <option value="transposition">transposition</option>
+                          </select>
+                        </div>
+                        <div class="col-md-3 key">
+                          <label for="key-select">Enter your Key:</label> <br>
+                          {% if cle %}
+                          <textarea class="input_k" type="text" id="key" name="key" placeholder=' key type : number, exp : 6'>{{cle}}</textarea>
+                          {% else %}
+                          <textarea class="input_k" type="text" id="key" name="key" placeholder=' key type : number, exp : 6'></textarea>
+                          {% endif %}
+                        </div>
+                      </div>
+                      <div class="row method">
+                          <label for="method-select">Choose a Reciever:</label>
+                          <select name="methode" id="methode-select">
+                              <option value="Encrypt" selected>Encrypt</option>
+                              <option value="Decrypt">Decrypt</option>
+                          </select>
+                      </div>
+                      
+                      <div class="row submit">
+                          <input type="submit" value="Envoyer">
+                        </div>
+                    </form>
+              </div>
+              
+          </div>
+          <div class="col-md-4 part3">
+            <div class="row nm_lg">
+                <div class="logo">
+                  <a href="#1">
+                      <img src="{{ url_for('static', filename='assets/logo.png') }}">
+                  </a>
+                </div>
+            </div>
+          </div>
+      </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      document.getElementById('algo-select').addEventListener("change", addActivityItem, true);
+      function addActivityItem(){
+        const key = document.getElementById('algo-select').value;
+        if (key=='ceasar'){
+          document.getElementsByName('key')[0].placeholder=' key type : number, exp : 6';
+        }
+        if (key=='vigenere'){
+          document.getElementsByName('key')[0].placeholder=' key type : string, exp : cde ';
+        }
+        if (key=='substitution'){
+          document.getElementsByName('key')[0].placeholder=' key length 26 without duplicate';
+        }
+        if (key=='transposition'){
+          document.getElementsByName('key')[0].placeholder=' key type : number, exp : 6';
+        }
+      }
+    </script>
+  </body>
+</html>

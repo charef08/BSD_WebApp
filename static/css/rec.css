@@ -1,6 +1,6 @@
 .container{
     height: 100vh;
-    width: 100%;
+    width: 99%;
     padding: 0;
     margin: 0;
 }
@@ -48,21 +48,16 @@
 }
 
 .img2{
-    height: 10%;
-    width: 100%;
-    margin-left: 0px;
+    height: 6%;
+    width: 70%;
+    margin-left: 18%;
     position: relative;
-    top: 27%;
-    left: 27%;
-    background-color: white;
-    border-radius: 27px;
+    top: 30%;
 }
 
 .img2 img{
-    height:85%;
-    width: 85%;
-    padding-left: 15%;
-    padding-top: 10%;
+    height: 90%;
+    width: 90%;
 }
 
 .img3{
@@ -79,17 +74,23 @@
 }
 
 .img4{
-    height: 6%;
-    width: 70%;
-    margin-left: 18%;
+    height: 10%;
+    width: 100%;
+    margin-left: 0px;
     position: relative;
     top: 60%;
+    left: 27%;
+    background-color: white;
+    border-radius: 27px;
 }
 
 .img4 img{
-    height: 90%;
-    width: 90%;
+    height:85%;
+    width: 85%;
+    padding-left: 15%;
+    padding-top: 10%;
 }
+
 
 /* ----------------------------------------- PART 2  ------------------------------------------------------- */
 .part2{
@@ -98,7 +99,7 @@
 }
 
 .intro{
-    height: 25%;
+    height: 28%;
     background-color: white;
     /* padding-left: 2%; */
     padding-top: 2%;
@@ -123,67 +124,98 @@
 
 .cadre p{
     padding-top: 2%;
+    padding-bottom: 3%;
     padding-left: 7%;
     font-size: 19px;
     font-family: Segoe Script;
 }
 
-.form{
-    height: 300px;
-    width: 100%;
-    /* background-color: aqua; */
-}
-
-.msg{
-    height: 60%;
-    width: 100%;
-    margin: 0;
-    padding-left: 4%;
-}
-
-.key{
-    height: 30%;
-    width: 100%;
-    margin: 0;
-    padding-left: 4%;
-    margin-top: 2%;
-}
-
-.key label, .msg label{
+.resultat{
+    height: 200px;
+    padding-top: 1%; 
     padding-left: 2%;
+}
+
+.resultat label{
+    /* padding-left: 2%; */
     font-weight: 800;
     font-size: 20px;
     font-family: Segoe Script;
 }
-
-.input_k{
-    padding-top: 1%;
-    padding-left: 5%;
-    margin-left: 6%;
-    margin-top: 1%;
-    border-radius: 20px;
-    display:inline-block;
-    height: 50%;
-    width: 40%;
-    resize: none;
-}
-
-.input_m{
-    padding-top: 2%;
+.msg label, .infor label{
     padding-left: 3%;
-    padding-bottom: 2%;
-    padding-right: 3%;
-    margin-left: 6%;
-    margin-top: 1%;
+    font-weight: 800;
+    font-size: 20px;
+    font-family: Segoe Script;
+}
+.resultat textarea{
+    padding-top: 2%;
+    padding-left: 2%;
     border-radius: 20px;
     display:inline-block;
     height: 80%;
-    width: 90%;
+    width: 100%;
+    resize: none;
+}
+.form{
+    height: 350px;
+    width: 100%;
+    /* padding-left: 2%; */
+}
+
+.msg{
+    height: 200px;
+}
+
+.msg textarea{
+    padding-top: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 20px;
+    display:inline-block;
+    height: 80%;
+    width: 94%;
+    resize: none;
+}
+
+.infor{
+    height: 100px;
+}
+
+.name{
+    margin-left: 2%;
+    margin-right: 12%;
+}
+
+.algo{
+    margin-right: 5%;
+}
+
+.algo textarea, .name textarea{
+    padding-top: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 20px;
+    display:inline-block;
+    height: 80%;
+    width: 200px;
+    resize: none;
+}
+
+.key textarea{
+    padding-top: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 20px;
+    display:inline-block;
+    height: 80%;
+    width: 300px;
     resize: none;
 }
 
 .submit{
-    height: 15%;
+    position: relative;
+    height: 50px;
     width: 100%;
     margin: 0;
     /* padding-left: 60%; */
@@ -192,50 +224,16 @@
 .submit input{
     position: relative;
     top: 10%;
-    left: 87%;
-    width: 10%;
-    height: 60%;
+    left: 80%;
+    width: 20%;
+    height: 70%;
     background-color: white;
     border-radius: 20px;
     font-size: 18px;
 }
 
-/* .msg2{
-    height: 30%;
-    background-color: white;
-    padding-top: 3%;
-    padding-left: 4%;
-}
-
-.txt_cadre{
-    border: 1px solid black;
-    height: 90%;
-    width: 90%;
-    position: relative;
-    left: 6%;
-    resize: none;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    overflow-y: scroll;
-}
-
-
-.msg2 label{
-    padding-left: 2%;
-    font-weight: 800;
-    font-size: 20px;
-    font-family: Segoe Script;
-}
-
-.msg p{
-    overflow-y: scroll;
-} */
 
 /* ----------------------------------------- PART 3  ------------------------------------------------------- */
-
 .part3{
     background-color: white;
     height: 100vh;
@@ -263,30 +261,4 @@
     width: 100%;
 }
 
-.msg2{
-    height: 75%;
-    background-color: white;
-    padding-top: 3%;
-    /* padding-left: 4%; */
-}
 
-
-.msg2 label{
-    padding-left: 2%;
-    font-weight: 800;
-    font-size: 20px;
-    font-family: Segoe Script;
-}
-
-/* .output_m{ */
-.msg2 textarea{
-    padding-top: 2%;
-    padding-left: 5%;
-    margin-left: 6%;
-    margin-top: 1%;
-    border-radius: 20px;
-    display:inline-block;
-    height: 92%;
-    width: 90%;
-    resize: none;
-}

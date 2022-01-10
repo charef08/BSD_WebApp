@@ -65,13 +65,13 @@ def Cryptage_vg(phrase, cd):
             i=0        
     return new_mot
 
-mot2 = Cryptage_vg('cettephraseestunsimpletestdecodage', 'che')
-print(mot2)
+# mot2 = Cryptage_vg('cettephraseestunsimpletestdecodage', 'che')
+# print(mot2)
 
 #-------------------------------------------- CRYPTAGE PAR SUBSTITUTION --------------------------------------------------------------
 
-# code = 'QWERTYUIOPASDFGHJKLZXCVBNM'
-# mot = 'Cryptographie'.upper()
+code = 'QWERTYUIOPASDFGHJKLZXCVBNM'
+mot = 'Cryptographie'.upper()
 
 # FONCTION DE CRYPTAGE PAR SUBSTITUTION
 def crypt_subt(mot, code):
@@ -85,12 +85,32 @@ def crypt_subt(mot, code):
     for ltr in mot:
         mot_crypt += subt[ltr]
     
-    return mot_decrypt
+    return mot_crypt
+
 
 #-------------------------------------------- CRYPTAGE PAR TRANSPOSITION --------------------------------------------------------------
 
-
+# FONCTION DE DECRYPTAGE PAR TRANSPOSITION
+def crypt_trsp(mot, cle):
+    taille = len(mot)
+    liste = []
+    i = 0
+    while i<taille:
+        mott=''
+        for j in range(0,cle):
+            if i<taille:
+                mott+=mot[i]
+                i+=1
+            else:
+                mott+='.'
+        liste.append(mott)
     
-        
+    mot_crypt = ''
+    for i in range(0, cle):
+        for j in range(0, len(liste)):
+            mot_crypt += liste[j][i]
+    
+    return mot_crypt
+
 
 

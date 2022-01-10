@@ -37,14 +37,14 @@
                   <img src="{{ url_for('static', filename='assets/hacking.png') }}">
                 </div>
               </a>
-              <a href="#3">
+              <a href="{{url_for('send_page')}}">
                 <div class="row img3">
-                  <img src="{{ url_for('static', filename='assets/conversation.png') }}">
+                  <img src="{{ url_for('static', filename='assets/send.png') }}">
                 </div>
               </a>
-              <a href="#4">
+              <a href="{{url_for('receive_page')}}">
                 <div class="row img4">
-                  <img src="{{ url_for('static', filename='assets/video.png') }}">
+                  <img src="{{ url_for('static', filename='assets/receive.png') }}">
                 </div>
               </a>
             </div>
@@ -52,7 +52,7 @@
         <div class="col-md-7 part2">
             <div class="row intro">
                 <div class="cadre">
-                  <h1> 	Hello world </h1>
+                  <h1> 	Cryptograpy App </h1>
                   <p> Encrypt and Decrypt a message   </p>
                 </div>
             </div>
@@ -70,35 +70,32 @@
                       <div class="col-md-4 algo">
                         <label for="algo-select">Choose an Algorithm:</label>
                         <select name="algo" id="algo-select">
-                            <option value="">--Please choose an option--</option>
-                            <option value="Cesar" selected>Cesar</option>
-                            <option value="Vigenere">Vigenere</option>
-                            <option value="Transposition">Transposition</option>
-                            <option value="Substitution">Substitution</option>
+                            <option value="ceasar" selected>ceasar</option>
+                            <option value="vigenere">vigenere</option>
+                            <option value="substitution">substitution</option>
+                            <option value="transposition">transposition</option>
                             <option value="DES">DES</option>
                         </select>
                       </div>
                       <div class="col-md-3 key">
                         <label for="key-select">Enter your Key:</label> <br>
                         {% if cle %}
-                        <textarea class="input_k" type="text" id="key" name="key" placeholder="Enter your KEY here......">{{cle}}</textarea>
+                        <textarea class="input_k" type="text" id="key" name="key" placeholder=' key type : number, exp : 6'>{{cle}}</textarea>
                         {% else %}
-                        <textarea class="input_k" type="text" id="key" name="key" placeholder="Enter your KEY here......"></textarea>
+                        <textarea class="input_k" type="text" id="key" name="key" placeholder=' key type : number, exp : 6'></textarea>
                         {% endif %}
                       </div>
                     </div>
                     <div class="row method">
                         <label for="method-select">Choose a Method:</label>
                         <select name="methode" id="methode-select">
-                            <option value="">--Please choose an option--</option>
                             <option value="Encrypt" selected>Encrypt</option>
                             <option value="Decrypt">Decrypt</option>
                         </select>
                     </div>
-                    
                     <div class="row submit">
-                        <input type="submit" value="Submit">
-                      </div>
+                      <input type="submit" value="Submit">
+                    </div>
                   </form>
             </div>
             
@@ -112,9 +109,32 @@
                 </div>
             </div>
             <div class="row msg2">
-                <label for="resultat">resultat:</label> <br>
+                <label for="resultat">result :</label> <br>
                 <textarea disabled class="output_m">{{resultat}}</textarea>
             </div>
         </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      document.getElementById('algo-select').addEventListener("change", addActivityItem, true);
+      function addActivityItem(){
+        const key = document.getElementById('algo-select').value;
+        if (key=='ceasar'){
+          document.getElementsByName('key')[0].placeholder=' key type : number, exp : 6';
+        }
+        if (key=='vigenere'){
+          document.getElementsByName('key')[0].placeholder=' key type : string, exp : cde ';
+        }
+        if (key=='substitution'){
+          document.getElementsByName('key')[0].placeholder=' key length 26 without duplicate';
+        }
+        if (key=='transposition'){
+          document.getElementsByName('key')[0].placeholder=' key type : number, exp : 6';
+        }
+        if (key=='DES'){
+          document.getElementsByName('key')[0].placeholder=' key type : string, exp : cde ';
+        }
+      }
+    </script>
 </body>
+</html>

@@ -29,6 +29,11 @@
     font-weight: 900;
 }
 
+.menu img:hover{
+    height: 95%;
+    width: 95%;
+}
+
 .img1{
     height: 10%;
     width: 100%;
@@ -214,7 +219,9 @@
 
 .input_m{
     padding-top: 2%;
-    padding-left: 5%;
+    padding-left: 3%;
+    padding-bottom: 2%;
+    padding-right: 3%;
     margin-left: 6%;
     margin-top: 1%;
     border-radius: 20px;
@@ -269,6 +276,8 @@
     margin-top: 2%;
     border-radius: 20px;
 }
+
+
 
 
 /* ----------------------------------------- PART 3  ------------------------------------------------------- */
