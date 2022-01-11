@@ -1,3 +1,7 @@
+
+# MESSAGE DE LA PART DE CHAREFEDDINE : DES ALGORITHM IS NOT WORKING, TRIED TO FIX IT BUT COULDN'T 
+
+
 import binascii
 
 # Hexadecimal to binary conversion
@@ -360,10 +364,3 @@ def decryptage_des(pt, key):
 	# print("Plain Text : ",text)
 
 	return text
-
-
-# pt = "123456ABCD132536"
-# pt="54455354544553F"
-# key = "AABB09182736CCDD"
-# print(cryptage_des(pt, key))
-# # print(decryptage_des(pt, key))

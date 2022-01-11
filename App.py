@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import json
 import urllib
-from att_vig import att_vig
-from Algos_Cryptage import crypter, crypt_subt, crypt_trsp
-from Algo_decryp_cle import decrypter, decrypt_subt, decrypt_trsp
-from DES import cryptage_des, decryptage_des
-from Algo_cesar import Cryptage_vg, deCryptage_vg
-from handler import validate_encrypt_request
+from Algos.att_vig import att_vig
+from Algos.Algos_Cryptage import crypter, crypt_subt, crypt_trsp
+from Algos.Algo_decryp_cle import decrypter, decrypt_subt, decrypt_trsp
+from Algos.DES import cryptage_des, decryptage_des
+from Algos.Algo_cesar import Cryptage_vg, deCryptage_vg
+from Algos.handler import validate_encrypt_request
 import netifaces
 import requests
 import sqlite3 as sql
@@ -70,7 +70,6 @@ def receive_page(name='', msg='', key='', algo=''):
 def send_ip():
     try :
         ip = req('charef', True)
-        print(ip)
         return render_template('send.html', ips=ip)
     except Exception as e:
         return e

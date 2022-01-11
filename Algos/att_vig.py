@@ -158,13 +158,4 @@ def att_vig(txt, lenk):
 
 
 
-
-
-# txt = 'bapapidiepvipvqcfxpowdrvcznmfjmnebvslspmpiqscqeiqaxwgvcifmaxgfkknxgopivrqiscnpgdgvgmdieigmmnfihxpeuxrvqopvrwcnrthwbenisslcvqbrbepdbmbeulbrleganzmttmqiqtkvnxgop'
-# att_vig(txt.upper(), 6)
-
-# txt = 'SDHRFLHFWESEGPGZIEWWGDCYHFBPOTRPDCSNWPIDSOOYGWSDXPIIZPGXOEVDZPGPBTUXSDZPGRSZQLQSSDSEZPGAFZPWSXSDOCSDCFRCSLIBIZHTRTSY'
-# att_vig(txt.upper(), 2)
-
-
     

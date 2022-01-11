@@ -1,5 +1,10 @@
 import sqlite3
 
+
+
+# MESSAGE CHAREFEDDINE : CREATED A DATABASE, BCUZ I WANTED TO SAVE THE COMMUNICATION HISTORY AND THEN RENDER IT ON THE FRONT BUT DIDN'T HAVE ENOUGH TIME
+
+
 conn = sqlite3.connect('database.db')
 print ("Opened database successfully")
 
