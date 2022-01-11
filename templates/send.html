@@ -94,11 +94,13 @@
                       <div class="row method">
                           <label for="method-select">Choose a Reciever:</label>
                           <select name='adress' id="methode-select">
-                            {% for ip in ips%}
-                            {%if ip["name"]!='charef'%}
-                              <option id='ipp' value="{{ip['ip']}}" selected>{{ip["ip"]}} {{ip["name"]}}</option>
+                            {% if ips %}
+                              {% for ip in ips%}
+                              {%if ip["name"]!='charef'%}
+                                <option id='ipp' value="{{ip['ip']}}" selected>{{ip["ip"]}} {{ip["name"]}}</option>
+                              {% endif %}
+                              {% endfor %}
                             {% endif %}
-                            {% endfor %}
                           </select>
                       </div>
                       

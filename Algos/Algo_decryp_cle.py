@@ -25,35 +25,6 @@ def decrypter(mot, dcg):
         new_mot = new_mot+alp2
     return new_mot
 
-#-------------------------------------------- DECRYPTAGE DE VIGENERE AVEC CLE --------------------------------------------------------------
-
-# CONVERTION EN CHIFFRE DU CODE DE CRYPTAGE
-def code_int(crp_vig0):
-    crp_vig1 = []
-    for ltr in crp_vig0:
-        i=0
-        while i<len(alphabet) and alphabet[i]!=ltr:
-            i+=1
-        crp_vig1.append(str(i))
-    return crp_vig1
-
-
-# FONCTION DE DECRYPTAGE DE VIGENERE
-def deCryptage_vg(phrase, cd):
-    code = code_int(cd)
-    new_mot = ''
-    tl = len(code)
-    j = 0
-    i=0
-    while j<len(phrase):
-        new_mot += decrypter(phrase[j], int(code[i]))
-        i+=1
-        j+=1
-        if i==tl:
-            i=0        
-    return new_mot
-
-
 
 #-------------------------------------------- DECRYPTAGE DE SUBSTITUTION AVEC CLE --------------------------------------------------------------
 
