@@ -57,9 +57,15 @@
                   </div>
               </div>
               <div class="row bottom">
+                <form id="refresh" class="form2" method="post" action="/getip">
+                  <div class="row submit2">
+                    <label for="msg">Message :</label>
+                    <button type="submit" form="refresh"><img src="{{ url_for('static', filename='assets/refresh.png') }}"></button>
+                  </div>
+                </form>
                 <form class="form" method="post" action="/send_message">
                       <div class="row msg">
-                          <label for="msg-select">Enter your message:</label> <br>
+                          <!-- <label for="msg-select">Enter your message:</label> <br> -->
                           {% if message %}
                           <textarea class="input_m" type="text" id="msg" name="msg" placeholder="Enter your message here......">{{message}}</textarea>
                           {% else %}
@@ -87,9 +93,12 @@
                       </div>
                       <div class="row method">
                           <label for="method-select">Choose a Reciever:</label>
-                          <select name="methode" id="methode-select">
-                              <option value="Encrypt" selected>Encrypt</option>
-                              <option value="Decrypt">Decrypt</option>
+                          <select name='adress' id="methode-select">
+                            {% for ip in ips%}
+                            {%if ip["name"]!='charef'%}
+                              <option id='ipp' value="{{ip['ip']}}" selected>{{ip["ip"]}} {{ip["name"]}}</option>
+                            {% endif %}
+                            {% endfor %}
                           </select>
                       </div>
                       
@@ -106,8 +115,14 @@
                   <a href="#1">
                       <img src="{{ url_for('static', filename='assets/logo.png') }}">
                   </a>
-                </div>
-            </div>
+                <!-- </div boxbox>
+                  {% for row in data %}
+                    <h4>sender : {{row["sender"]}}</h3>
+                    <h4>msg : {{row["msg"]}}</h3>
+                    <h4>algo : {{row["algo"]}}</h3>
+                    <h4>key : {{row["key"]}}</h3>
+                  {% endfor %}
+               </div> -->
           </div>
       </div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

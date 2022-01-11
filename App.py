@@ -9,6 +9,7 @@ from Algo_cesar import Cryptage_vg, deCryptage_vg
 from handler import validate_encrypt_request
 import netifaces
 import requests
+import sqlite3 as sql
 
 def get_gatway_ip():
     try:
@@ -43,11 +44,10 @@ def send_data(ip,sender,algo,msg,key):
 app = Flask(__name__)
 
 list_msg = []
-list_s = req('charef', True)
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index(msg='', cle='', res=''):
+    req('charef', True)
     return render_template('index2.html',message=msg, cle=cle, resultat=res)
 
 @app.route('/vigenere', methods=['GET', 'POST'])
@@ -56,7 +56,8 @@ def vig(msg='', lk='', val=''):
 
 @app.route('/send', methods=['POST', 'GET'])
 def send_page():
-    return render_template('send.html')
+    ip = req('charef', True)
+    return render_template('send.html', ips=ip)
 
 @app.route('/receive', methods=['POST', 'GET'])
 def receive_page(name='', msg='', key='', algo=''):
@@ -64,18 +65,43 @@ def receive_page(name='', msg='', key='', algo=''):
         return render_template('receive.html', name=name, message=msg, key=key, algo=algo)
     except Exception as e:
         print(e)
-        
+
+@app.route('/getip', methods=['POST', 'GET'])
+def send_ip():
+    try :
+        ip = req('charef', True)
+        print(ip)
+        return render_template('send.html', ips=ip)
+    except Exception as e:
+        return e
+       
 @app.route('/send_message', methods=['POST', 'GET'])
 def send_message():
-    name = 'charef'
-    algo = request.form['algo']
-    msg = request.form['msg']
-    ip = request.form['adress']
-    key = request.form['key']
+    try:
+        name = 'charef'
+        algo = request.form['algo']
+        msg_org = request.form['msg']
+        msg=''.join(filter(str.isalnum, msg_org)).upper()
+        ip = request.form['adress']
+        cle = request.form['key']
 
-    send_data(ip, name, algo, msg, int(key))
+        if algo=='ceasar':
+            cle = int(cle)
+            res = crypter(msg, cle).lower()
+        if algo=='vigenere':
+            res = Cryptage_vg(msg, cle.upper()).lower()
+        if algo=='substitution':
+            res = crypt_subt(msg, cle.upper()).lower()
+        if algo=='transposition':
+            cle = int(cle)
+            res = crypt_trsp(msg, cle).lower()
 
-    return render_template('send.html')
+        if send_data(ip, name, algo, res, cle)==-1:
+            return 'erreur : message non envoye'
+        else:
+            return render_template('send.html')
+    except Exception as e:
+        return 'error'
 
 @app.route('/process_form', methods=['GET', 'POST'])
 def process_form():
@@ -98,7 +124,9 @@ def process_form():
                 if algo=='transposition':
                     res = crypt_trsp(msg, int(cle))
                 if algo=='DES':
-                    res=cryptage_des(msg, cle)
+                    msg3 = msg.encode('utf-8').hex()
+                    cle3 = cle.encode('utf-8').hex().upper()
+                    res =cryptage_des(msg3, cle3)
             
         if methode=='Decrypt':
                 if algo=='ceasar':
@@ -116,7 +144,7 @@ def process_form():
 
     except Exception as e:
         print(e)
-        return '<h1>VEUILLEZ VERIFIER LES INFORMATIONS INTRODUITES</h1>'
+        return '<h1>ERROR : VEUILLEZ VERIFIER LES INFORMATIONS INTRODUITES</h1>'
 
 @app.route('/process_msg', methods=['GET', 'POST'])
 def process_msg():
@@ -137,13 +165,11 @@ def process_msg():
             res=decrypt_subt(msg, cle.upper())
         if str(algo)=='transposition':
             res=decrypt_trsp(msg, int(cle))
-
-        print('res : ', res)
             
         return render_template('receive.html', name=name, message=msg_org, algo=algo, key=cle, resultat=res)
 
     except:
-        return '<h2>Vous devez d\'abord recevoir un message pour pouvoir le decrypter</h2>'
+        return '<h2>ERROR : Vous devez d\'abord recevoir un message pour pouvoir le decrypter</h2>'
 
 @app.route('/proc_vige', methods=['GET', 'POST'])
 def proc_vige():
@@ -167,16 +193,14 @@ def encrypt():
         typed = requestJson['type']
 
         list_msg.append(requestJson)
-
-
         return 'message recu'
 
     except:
         return 'erreur'
-    
+
 @app.route('/call_list', methods=['GET', 'POST'])
 def call_list():
-    try:
+    try: 
         if len(list_msg)!=0:
             sender = list_msg[-1]['sender']
             algo = list_msg[-1]['algorithm']

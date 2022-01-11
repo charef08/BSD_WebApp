@@ -187,7 +187,7 @@ def encrypt(pt, rkb, rk):
 	
 	# Initial Permutation
 	pt = permute(pt, initial_perm, 64)
-	print("After initial permutation", bin2hex(pt))
+	# print("After initial permutation", bin2hex(pt))
 	
 	# Splitting
 	left = pt[0:32]
@@ -217,7 +217,7 @@ def encrypt(pt, rkb, rk):
 		# Swapper
 		if(i != 15):
 			left, right = right, left
-		print("Round ", i + 1, " ", bin2hex(left), " ", bin2hex(right), " ", rk[i])
+		# print("Round ", i + 1, " ", bin2hex(left), " ", bin2hex(right), " ", rk[i])
 	
 	# Combination
 	combine = left + right
@@ -289,7 +289,9 @@ def cryptage_des(pt, key):
 	# print("Encryption")
 	cipher_text = bin2hex(encrypt(pt, rkb, rk))
 	# print("Cipher Text : ",hex2bin(cipher_text))
+	# return bytearray().fromhex(cipher_text).decode()
 	return cipher_text
+	# return bytearray.fromhex(cipher_text).decode()
 
 def decryptage_des(pt, key):
 
@@ -360,3 +362,8 @@ def decryptage_des(pt, key):
 	return text
 
 
+# pt = "123456ABCD132536"
+# pt="54455354544553F"
+# key = "AABB09182736CCDD"
+# print(cryptage_des(pt, key))
+# # print(decryptage_des(pt, key))
