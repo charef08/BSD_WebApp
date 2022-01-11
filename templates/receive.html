@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Encryption App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet"> 
+    <!-- Bootstrap theme -->
+    <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/rec.css') }}" rel="stylesheet">
+
+    <!-- <script src="{{url_for('static', filename='js/functions.js')}}"></script> -->
+
+    
+  </head>
+  <body>
+      <div class="container">
+        <div class="col-md-1 part1">
+            <div class="menu">
+              <p>Menu</p>
+              <a href="{{url_for('index')}}">
+                <div class="row img1">
+                  <img src="{{ url_for('static', filename='assets/encryption.png') }}">
+                </div>
+              </a>
+              <a href="{{url_for('vig')}}">
+                <div class="row img2">
+                  <img src="{{ url_for('static', filename='assets/hacking.png') }}">
+                </div>
+              </a>
+              <a href="{{url_for('send_page')}}">
+                <div class="row img3">
+                  <img src="{{ url_for('static', filename='assets/send.png') }}">
+                </div>
+              </a>
+              <a href="{{url_for('receive_page')}}">
+                <div class="row img4">
+                  <img src="{{ url_for('static', filename='assets/receive.png') }}">
+                </div>
+              </a>
+            </div>
+        </div>
+        <div class="col-md-7">
+          <div class="row intro">
+            <div class="cadre">
+              <h1> 	Cryptograpy App </h1>
+              <p> Messages reception </p>
+            </div>
+          </div>
+          <div class="row bottom">
+            <form id="refresh" class="form2" method="post" action="/call_list">
+              <div class="row submit2">
+                <label for="msg">Message :</label>
+                <button type="submit" form="refresh"><img src="{{ url_for('static', filename='assets/refresh.png') }}"></button>
+              </div>
+            </form>
+            <form class="form" method="post" action="/process_msg">
+            <!-- <form class="form"> -->
+                <div class="row msg">  
+                    <!-- <br> -->
+                    <textarea class="input_m" type="text" id="msg" name="message">{{message}}</textarea>
+                </div>
+                <div class="row infor">
+                  <div class="col-md-2 name">
+                    <label for="name">Sender :</label> <br>
+                    <textarea class="input_n" type="text" id="name" name="name">{{name}}</textarea>
+                  </div>
+                  <div class="col-md-3 algo">
+                    <label for="algo">Algorithm :</label> <br>
+                    <textarea class="input_a" type="text" id="algo" name="algo">{{algo}}</textarea>
+                  </div>
+                  <div class="col-md-3 key">
+                    <label for="key">Key :</label> <br>
+                    <textarea class="input_k" type="text" id="key" name="key">{{key}}</textarea>
+                  </div>
+                </div>
+                <div class="row submit">
+                    <input id="clickMe" type="submit" value="Decrypt">
+                </div>
+            </form>
+          </div>
+          <div class="row resultat">
+            <label for="resultat">Result :</label> <br>
+            <textarea disabled class="output_m">{{resultat}}</textarea>
+          </div>
+        </div>
+
+
+          <div class="col-md-4 part3">
+            <div class="row nm_lg">
+                <div class="logo">
+                  <a href="#1">
+                      <img src="{{ url_for('static', filename='assets/logo.png') }}">
+                  </a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+          // const api_url = "http://172.20.10.4:3000/encrypt";
+          // async function getdata(url){
+          //   const response = await fetch(url);
+          //   var data = await response.json();
+          //   console.log(data);
+          // }
+          // document.getElementById('clickMe').addEventListener('click', getdata, true);
+          // while(true){
+          //   getdata(api_url);
+          // }
+        </script>
+  </body>
